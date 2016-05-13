@@ -37,8 +37,6 @@ public class VentanaBatalla extends javax.swing.JFrame {
         jL_AtaqueR2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jT_Chat.setColumns(20);
         jT_Chat.setRows(5);
         jScrollPane1.setViewportView(jT_Chat);
