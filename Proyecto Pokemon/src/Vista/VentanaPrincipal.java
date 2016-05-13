@@ -19,6 +19,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.jM_Crear_Entrenador.addActionListener(cVentanaPrincipal);
         this.jM_Ranking.addActionListener(cVentanaPrincipal);
         this.jM_Ver.addActionListener(cVentanaPrincipal);
+        this.jB_Batalla.addActionListener(cVentanaPrincipal);
     }
 
     /**
