@@ -4,25 +4,26 @@
  * and open the template in the editor.
  */
 package Controlador;
-import Vista.VentanaCreadorEntrenador;
+
+import Vista.VentanaPokedex;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 /**
  *
  * @author GersanElPuto
  */
-public class ControladorVentanaCreadorEntrenador implements ActionListener{
-    VentanaCreadorEntrenador ventanaCreador;
+public class ControladorPokedex implements ActionListener{
+    VentanaPokedex ventanaCreador;
     
-    public ControladorVentanaCreadorEntrenador(){
+    public ControladorPokedex(){
         this.ventanaCreador = ventanaCreador;
     }
     
     public void actionPerformed(ActionEvent e){
-        if(e.getActionCommand().equalsIgnoreCase("Crear")){
+        if(e.getActionCommand().equalsIgnoreCase("Salir")){
             
         }
-        if(e.getActionCommand().equalsIgnoreCase("Limpiar")){
+        /*if(e.getActionCommand().equalsIgnoreCase("Limpiar")){
                 
         }
         if(e.getActionCommand().equalsIgnoreCase("Borrar")){
@@ -30,11 +31,9 @@ public class ControladorVentanaCreadorEntrenador implements ActionListener{
         }
         if(e.getActionCommand().equalsIgnoreCase("Modificar")){
                         
-        }
+        }*/
               
     }     
     
     
 }
-    
-
