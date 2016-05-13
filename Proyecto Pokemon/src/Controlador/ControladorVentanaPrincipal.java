@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.VentanaCreadorEntrenador;
 import Vista.VentanaRanking;
+import Vista.VentanaPokedex;
 import javax.swing.JOptionPane;
 /**
  *
@@ -18,10 +19,11 @@ public class ControladorVentanaPrincipal implements ActionListener{
     
     private VentanaCreadorEntrenador ventanaC;
     private VentanaRanking ventanaR;
-    
+    private VentanaPokedex ventanaP;
     public ControladorVentanaPrincipal() {
         ventanaC = new VentanaCreadorEntrenador();
         ventanaR = new VentanaRanking();
+        ventanaP = new VentanaPokedex();
         
     }
     
@@ -32,6 +34,9 @@ public class ControladorVentanaPrincipal implements ActionListener{
         }
         if(e.getActionCommand().equalsIgnoreCase("Ranking")){
             ventanaR.show();
+        }
+        if(e.getActionCommand().equalsIgnoreCase("Ver")){
+            ventanaP.show();
         }
    
     

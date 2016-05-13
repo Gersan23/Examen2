@@ -19,7 +19,7 @@ public class ControladorPokedex implements ActionListener{
         this.ventanaCreador = ventanaCreador;
     }
     
-    public void actionPerformed(ActionEvent e){
+    /*public void actionPerformed(ActionEvent e){
         if(e.getActionCommand().equalsIgnoreCase("Salir")){
             
         }
@@ -32,8 +32,12 @@ public class ControladorPokedex implements ActionListener{
         if(e.getActionCommand().equalsIgnoreCase("Modificar")){
                         
         }*/
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
               
-    }     
+}     
     
     
-}

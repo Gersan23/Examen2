@@ -18,6 +18,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.cVentanaPrincipal= new ControladorVentanaPrincipal();
         this.jM_Crear_Entrenador.addActionListener(cVentanaPrincipal);
         this.jM_Ranking.addActionListener(cVentanaPrincipal);
+        this.jM_Ver.addActionListener(cVentanaPrincipal);
     }
 
     /**
@@ -38,6 +39,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jM_Crear_Entrenador = new javax.swing.JMenuItem();
         jM_Ranking = new javax.swing.JMenuItem();
         jM_Pokedex = new javax.swing.JMenu();
+        jM_Ver = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,6 +63,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jM_Entrenador);
 
         jM_Pokedex.setText("Pokedex");
+
+        jM_Ver.setText("Ver");
+        jM_Ver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jM_VerActionPerformed(evt);
+            }
+        });
+        jM_Pokedex.add(jM_Ver);
+
         jMenuBar1.add(jM_Pokedex);
 
         setJMenuBar(jMenuBar1);
@@ -93,6 +104,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jM_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jM_VerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jM_VerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,6 +152,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jM_Entrenador;
     private javax.swing.JMenu jM_Pokedex;
     private javax.swing.JMenuItem jM_Ranking;
+    private javax.swing.JMenuItem jM_Ver;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JRadioButton jR_1Jugador;
     private javax.swing.JRadioButton jR_2Jugadores;
