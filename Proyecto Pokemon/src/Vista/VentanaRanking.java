@@ -36,8 +36,6 @@ public class VentanaRanking extends javax.swing.JFrame {
         jL_ContadorVictorias = new javax.swing.JLabel();
         jL_ContadorDerrotas = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jL_Entrenadores.setText("Entrenadores:");
 
         jC_Entrenadores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));

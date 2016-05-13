@@ -17,6 +17,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setTitle("Pokémon");
         this.cVentanaPrincipal= new ControladorVentanaPrincipal();
         this.jM_Crear_Entrenador.addActionListener(cVentanaPrincipal);
+        this.jM_Ranking.addActionListener(cVentanaPrincipal);
     }
 
     /**

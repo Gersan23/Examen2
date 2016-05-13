@@ -15,7 +15,17 @@ public class ControladorVentanaRanking implements ActionListener {
     VentanaRanking ventanaR;
 
     public ControladorVentanaRanking(){
-        
+        this.ventanaR = ventanaR;
     }
     
+    /*public void actionPerformed(ActionEvent e){
+        if(e.getActionCommand().){
+            
+        }
+    }*/
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
