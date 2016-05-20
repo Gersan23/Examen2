@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.RegistroEntrenador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.VentanaCreadorEntrenador;
@@ -22,9 +23,11 @@ public class ControladorVentanaPrincipal implements ActionListener{
     private VentanaRanking ventanaR;
     private VentanaPokedex ventanaP;
     private VentanaBatalla ventanaB;
+    private RegistroEntrenador registro;
     
     public ControladorVentanaPrincipal() {
-        ventanaC = new VentanaCreadorEntrenador();
+        registro=new RegistroEntrenador();
+        ventanaC = new VentanaCreadorEntrenador(registro);
         ventanaR = new VentanaRanking();
         ventanaP = new VentanaPokedex();
         ventanaB = new VentanaBatalla();

@@ -6,6 +6,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -70,5 +71,27 @@ public class RegistroEntrenador {
   {
     return array.size();
   }
+  
+  public boolean verificarDatos(Entrenador e){
+      for (int i = 0; i < array.size(); i++) {
+          if(e.getUsuario().equalsIgnoreCase(array.get(i).getUsuario())){
+              JOptionPane.showMessageDialog(null, "El nombre de usuario ya está siendo usado.");
+              return false;
+          }
+          if(e.getCodigoDeEntrenador().equalsIgnoreCase(array.get(i).getCodigoDeEntrenador())){
+              JOptionPane.showMessageDialog(null, "El codigo de usuario ya está siendo usado.");
+              return false;
+          }
+      }
+      return true;
+  }
+
+    public ArrayList<Entrenador> getArray() {
+        return array;
+    }
+  
+  
+  
+    
     
 }

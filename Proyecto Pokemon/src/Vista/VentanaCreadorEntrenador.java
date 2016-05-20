@@ -4,8 +4,13 @@
  * and open the template in the editor.
  */
 package Vista;
+import Controlador.ControladorVentanaCreadorEntrenador;
 import Modelo.Entrenador;
 import Modelo.RegistroEntrenador;
+import java.awt.event.ActionListener;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 /**
  *
  * @author Gersan
@@ -13,20 +18,31 @@ import Modelo.RegistroEntrenador;
 public class VentanaCreadorEntrenador extends javax.swing.JFrame {
     Entrenador entrenador;
     RegistroEntrenador registro;
+    
+    
     /**
      * Creates new form VentanaCreadorEntrenador
      */
-    public VentanaCreadorEntrenador() {
+    public VentanaCreadorEntrenador(RegistroEntrenador registroEntrenador) {
         initComponents();
+        this.registro=registroEntrenador;
         this.setTitle("Crear Entrenador");
-        jT_Codigo.setEditable(false);
+//        jT_Codigo.setEditable(false);
+        ControladorVentanaCreadorEntrenador control=new ControladorVentanaCreadorEntrenador(this, registro);
+        agregarEscuchador(control);
     }
     
-    public void crearEntrenador(){//aqui empezó crearEntrenador
-        
-        
-    }//aqui termino crearEntrenador
-
+   
+    public void limpiar(){
+        jT_Usuario.setText("");
+        jT_Usuario.setText("");
+    }
+    public void agregarEscuchador(ActionListener manejador){
+        jB_Borrar.addActionListener(manejador);
+        jB_Crear.addActionListener(manejador);
+        jB_Limpiar.addActionListener(manejador);
+        jB_Modificar.addActionListener(manejador);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,8 +80,6 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
         jL_Pokemon2.setText("Pokémon 2");
 
         jL_Pokemon3.setText("Pokémon 3");
-
-        jC_Pokemon1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jC_Pokemon2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jC_Pokemon2.addActionListener(new java.awt.event.ActionListener() {
@@ -111,16 +125,16 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jC_Pokemon1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jL_Pokemon1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jL_Pokemon1)
-                                .addGap(18, 18, 18)
                                 .addComponent(jL_Pokemon2)
                                 .addGap(18, 18, 18)
                                 .addComponent(jL_Pokemon3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jC_Pokemon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jC_Pokemon2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jC_Pokemon3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -133,7 +147,7 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
                         .addComponent(jB_Limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jB_Borrar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,12 +168,11 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
                     .addComponent(jL_Pokemon2)
                     .addComponent(jL_Pokemon3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jC_Pokemon2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jC_Pokemon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jC_Pokemon3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jB_Modificar)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jC_Pokemon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jC_Pokemon3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB_Modificar)
+                    .addComponent(jC_Pokemon2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jB_Crear)
@@ -232,4 +245,26 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
     private javax.swing.JTextField jT_CodigoBuscar;
     private javax.swing.JTextField jT_Usuario;
     // End of variables declaration//GEN-END:variables
+
+    public String getjC_Pokemon1() {
+        return (String) jC_Pokemon1.getSelectedItem();
+    }
+
+    public String getjC_Pokemon2() {
+        return (String) jC_Pokemon2.getSelectedItem();
+    }
+
+    public String getjC_Pokemon3() {
+        return (String) jC_Pokemon3.getSelectedItem();
+    }
+
+    public String getjT_Codigo() {
+        return jT_Codigo.getText();
+    }
+
+    public String getjT_Usuario() {
+        return jT_Usuario.getText();
+    }
+
+
 }
