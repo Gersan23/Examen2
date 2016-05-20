@@ -5,17 +5,23 @@
  */
 package Vista;
 
+import Modelo.Pokemon;
 /**
  *
  * @author Gersan
  */
 public class VentanaPokedex extends javax.swing.JFrame {
+    Pokemon pokemon;
 
     /**
      * Creates new form VentanaPokedex
      */
     public VentanaPokedex() {
         initComponents();
+        jTextArea1.enable(false);
+    }
+    
+    public void agregarPokemon(){
         
     }
 
@@ -36,6 +42,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
 
         jL_Avatar.setBackground(new java.awt.Color(255, 51, 51));
         jL_Avatar.setForeground(new java.awt.Color(255, 0, 51));
+        jL_Avatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1.png"))); // NOI18N
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);

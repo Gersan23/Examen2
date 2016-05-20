@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package Vista;
-
+import Modelo.Entrenador;
+import Modelo.RegistroEntrenador;
 /**
  *
  * @author Gersan
  */
 public class VentanaCreadorEntrenador extends javax.swing.JFrame {
-
+    Entrenador entrenador;
+    RegistroEntrenador registro;
     /**
      * Creates new form VentanaCreadorEntrenador
      */
@@ -19,6 +21,11 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
         this.setTitle("Crear Entrenador");
         jT_Codigo.setEditable(false);
     }
+    
+    public void crearEntrenador(){//aqui empezó crearEntrenador
+        
+        
+    }//aqui termino crearEntrenador
 
     /**
      * This method is called from within the constructor to initialize the form.

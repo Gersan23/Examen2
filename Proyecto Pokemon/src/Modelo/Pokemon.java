@@ -5,6 +5,8 @@
  */
 package Modelo;
 
+import javax.swing.Icon;
+
 /**
  *
  * @author Erick
@@ -13,13 +15,15 @@ public class Pokemon {
 
 private String nombre;
 private int ataque;
-private int numero;
+private String numero;
+private Icon imagen;
 
-public Pokemon(String nombre, int ataque, int numero)
+public Pokemon(String nombre, int ataque, String numero, Icon imagen)
 {
     this.nombre=nombre;
     this.ataque=ataque;
     this.numero=numero;
+    this.imagen=imagen;
 }
 
     public String getNombre() {
@@ -38,12 +42,20 @@ public Pokemon(String nombre, int ataque, int numero)
         this.ataque = ataque;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
+    }
+    
+    public Icon getImagen(){
+        return imagen;
+    }
+    
+    public void setImagen(Icon imagen){
+        this.imagen = imagen;
     }
 
 }
