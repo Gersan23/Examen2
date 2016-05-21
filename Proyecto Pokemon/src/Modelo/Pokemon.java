@@ -16,14 +16,14 @@ public class Pokemon {
 private String nombre;
 private int ataque;
 private String numero;
-private Icon imagen;
+//private Icon imagen;//LA IDEA ES METER ESTE ATRIBUTO AL VECTOR
 
-public Pokemon(String nombre, int ataque, String numero, Icon imagen)
+public Pokemon(String nombre, int ataque, String numero)//Icon imagen)
 {
     this.nombre=nombre;
     this.ataque=ataque;
     this.numero=numero;
-    this.imagen=imagen;
+    //this.imagen=imagen;
 }
 
     public String getNombre() {
@@ -50,12 +50,12 @@ public Pokemon(String nombre, int ataque, String numero, Icon imagen)
         this.numero = numero;
     }
     
-    public Icon getImagen(){
-        return imagen;
-    }
-    
-    public void setImagen(Icon imagen){
-        this.imagen = imagen;
-    }
+//    public Icon getImagen(){
+//        return imagen;
+//    }
+//    
+//    public void setImagen(Icon imagen){
+//        this.imagen = imagen;
+//    }
 
 }
