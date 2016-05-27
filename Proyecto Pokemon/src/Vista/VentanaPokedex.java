@@ -4,24 +4,33 @@
  * and open the template in the editor.
  */
 package Vista;
-
 import Modelo.Pokemon;
+import Modelo.VectorPokemon;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 /**
  *
  * @author Gersan
  */
 public class VentanaPokedex extends javax.swing.JFrame {
     Pokemon pokemon;
-
+    VectorPokemon pokemonVect= new VectorPokemon();
     /**
      * Creates new form VentanaPokedex
      */
     public VentanaPokedex() {
         initComponents();
         jTextArea1.enable(false);
+        agregarPokemon();
     }
     
     public void agregarPokemon(){
+        pokemonVect.poke(0);
+        
+        Image image=pokemonVect.poke(0).getImagen();
+        Icon icon= new ImageIcon(image);
+        jL_Avatar.setIcon(icon);
         
     }
 
@@ -42,7 +51,6 @@ public class VentanaPokedex extends javax.swing.JFrame {
 
         jL_Avatar.setBackground(new java.awt.Color(255, 51, 51));
         jL_Avatar.setForeground(new java.awt.Color(255, 0, 51));
-        jL_Avatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1.png"))); // NOI18N
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
