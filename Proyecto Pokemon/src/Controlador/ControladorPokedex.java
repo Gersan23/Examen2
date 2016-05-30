@@ -27,11 +27,13 @@ public class ControladorPokedex implements ActionListener{
     
       public void actionPerformed(ActionEvent e)
       {
-        poneImg();
+         poneImg();
       }
     
-    public void poneImg(){        
+    public void poneImg(){  
+        
         ventanaCreador.agregarImagen(ventanaCreador.getjC_Lista().getSelectedIndex());
+        ventanaCreador.agregarTexto(ventanaCreador.getjC_Lista().getSelectedIndex());
     }
               
 }     

@@ -30,8 +30,14 @@ public class VentanaPokedex extends javax.swing.JFrame {
         llenarComboBox();
         control = new ControladorPokedex(this);
         jC_Lista.addActionListener(control);
+        //jTextArea1.setText("Hola");
     }
-    
+    public void agregarTexto(int i){
+        pokemonVect.poke(i);
+        Pokemon pokemon = pokemonVect.poke(i);
+        String detalle = pokemon.getDetalle();
+        jTextArea1.setText(detalle);
+    }
     public void agregarImagen(int i){
         
         pokemonVect.poke(i);

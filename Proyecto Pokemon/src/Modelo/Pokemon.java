@@ -20,7 +20,7 @@ private String numero;
 private Image imagen;//LA IDEA ES METER ESTE ATRIBUTO AL VECTOR
 private String detalle;
 
-public Pokemon(String nombre, int ataque, String numero,Image icon, String detalle)//Icon imagen)
+public Pokemon(String nombre, int ataque, String numero,Image icon, String detalle)
 {
     this.nombre=nombre;
     this.ataque=ataque;
