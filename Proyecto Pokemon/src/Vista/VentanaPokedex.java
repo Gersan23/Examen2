@@ -28,13 +28,15 @@ public class VentanaPokedex extends javax.swing.JFrame {
         initComponents();
         jTextArea1.enable(false);
         llenarComboBox();
+        control = new ControladorPokedex(this);
+        jC_Lista.addActionListener(control);
     }
     
     public void agregarImagen(int i){
         
         pokemonVect.poke(i);
         
-        Image image=pokemonVect.poke(0).getImagen();
+        Image image=pokemonVect.poke(i).getImagen();
         Icon icon= new ImageIcon(image);
         jL_Avatar.setIcon(icon);
         
@@ -147,7 +149,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
 //        });
 //    }
 
-    public JComboBox<String> getjC_Lista() {
+    public JComboBox getjC_Lista() {
         return jC_Lista;
     }
 

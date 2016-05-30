@@ -20,11 +20,9 @@ public class ControladorPokedex implements ActionListener{
     VentanaPokedex ventanaCreador;
     Pokemon pokemon;
     VectorPokemon vectorPokemon;
-    JComboBox combo = ventanaCreador.getjC_Lista();
-    JLabel label = ventanaCreador.getjL_Avatar();
-    public ControladorPokedex(VentanaPokedex ventanaCreador, VectorPokemon vectorPokemon){
-        ventanaCreador = ventanaCreador;
-        vectorPokemon = vectorPokemon;
+    public ControladorPokedex(VentanaPokedex ventana){
+        
+        ventanaCreador = ventana;
     }
     
       public void actionPerformed(ActionEvent e)
@@ -32,13 +30,8 @@ public class ControladorPokedex implements ActionListener{
         poneImg();
       }
     
-    public void poneImg(){
-        
-        int seleccionado;
-        seleccionado = (int) combo.getSelectedIndex();
-        pokemon = vectorPokemon.poke(seleccionado);
-        ventanaCreador.agregarImagen(seleccionado);
-        
+    public void poneImg(){        
+        ventanaCreador.agregarImagen(ventanaCreador.getjC_Lista().getSelectedIndex());
     }
               
 }     
