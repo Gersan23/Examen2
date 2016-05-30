@@ -6,36 +6,39 @@
 package Controlador;
 
 import Vista.VentanaPokedex;
+import Modelo.Pokemon;
+import Modelo.VectorPokemon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 /**
  *
  * @author GersanElPuto
  */
 public class ControladorPokedex implements ActionListener{
     VentanaPokedex ventanaCreador;
-    
-    public ControladorPokedex(){
-        this.ventanaCreador = ventanaCreador;
+    Pokemon pokemon;
+    VectorPokemon vectorPokemon;
+    JComboBox combo = ventanaCreador.getjC_Lista();
+    JLabel label = ventanaCreador.getjL_Avatar();
+    public ControladorPokedex(VentanaPokedex ventanaCreador, VectorPokemon vectorPokemon){
+        ventanaCreador = ventanaCreador;
+        vectorPokemon = vectorPokemon;
     }
     
-    /*public void actionPerformed(ActionEvent e){
-        if(e.getActionCommand().equalsIgnoreCase("Salir")){
-            
-        }
-        /*if(e.getActionCommand().equalsIgnoreCase("Limpiar")){
-                
-        }
-        if(e.getActionCommand().equalsIgnoreCase("Borrar")){
-                    
-        }
-        if(e.getActionCommand().equalsIgnoreCase("Modificar")){
-                        
-        }*/
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      public void actionPerformed(ActionEvent e)
+      {
+        poneImg();
+      }
+    
+    public void poneImg(){
+        
+        int seleccionado;
+        seleccionado = (int) combo.getSelectedIndex();
+        pokemon = vectorPokemon.poke(seleccionado);
+        ventanaCreador.agregarImagen(seleccionado);
+        
     }
               
 }     

@@ -4,11 +4,15 @@
  * and open the template in the editor.
  */
 package Vista;
+import Controlador.ControladorPokedex;
 import Modelo.Pokemon;
 import Modelo.VectorPokemon;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
 /**
  *
  * @author Gersan
@@ -16,24 +20,36 @@ import javax.swing.ImageIcon;
 public class VentanaPokedex extends javax.swing.JFrame {
     Pokemon pokemon;
     VectorPokemon pokemonVect= new VectorPokemon();
+    ControladorPokedex control;
     /**
      * Creates new form VentanaPokedex
      */
     public VentanaPokedex() {
         initComponents();
         jTextArea1.enable(false);
-        agregarPokemon();
+        llenarComboBox();
     }
     
-    public void agregarPokemon(){
-        pokemonVect.poke(0);
+    public void agregarImagen(int i){
+        
+        pokemonVect.poke(i);
         
         Image image=pokemonVect.poke(0).getImagen();
         Icon icon= new ImageIcon(image);
         jL_Avatar.setIcon(icon);
         
     }
-
+    
+    public void llenarComboBox(){//llenar la lista de combobox
+        jC_Lista.removeAllItems();
+        Pokemon pokemon1 = null;
+        String agregado;
+        for(int i = 0; i < pokemonVect.getTamano(); i++){
+            pokemon1 = pokemonVect.poke(i);
+            jC_Lista.addItem(pokemon1.getNombre());
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -131,6 +147,52 @@ public class VentanaPokedex extends javax.swing.JFrame {
 //        });
 //    }
 
+    public JComboBox<String> getjC_Lista() {
+        return jC_Lista;
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(VentanaPokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(VentanaPokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(VentanaPokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(VentanaPokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//    /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new VentanaPokedex().setVisible(true);
+//            }
+//        });
+//    }
+    public JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public JLabel getjL_Avatar() {
+        return jL_Avatar;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jC_Lista;
     private javax.swing.JLabel jL_Avatar;
@@ -138,4 +200,6 @@ public class VentanaPokedex extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
+    
 }
