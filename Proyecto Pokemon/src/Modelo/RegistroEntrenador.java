@@ -64,6 +64,9 @@ public class RegistroEntrenador {
       {
         array.remove(i);
       }
+      else{
+          JOptionPane.showMessageDialog(null, "Ese codigo no existe dentro de los entrenadores ya creados");
+      }
     }
   }
   

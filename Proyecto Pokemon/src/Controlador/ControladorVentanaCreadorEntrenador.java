@@ -33,15 +33,22 @@ public class ControladorVentanaCreadorEntrenador implements ActionListener {
             System.out.println("Boton Crear");
         }
         if (e.getActionCommand().equalsIgnoreCase("Limpiar")) {
-            ventanaCreador.limpiar();
+            limpiar();
         }
         if (e.getActionCommand().equalsIgnoreCase("Borrar")) {
-
+            eliminar();
         }
         if (e.getActionCommand().equalsIgnoreCase("Modificar")) {
 
         }
+        if(e.getActionCommand().equalsIgnoreCase("Buscar")){
+            
+        }
 
+    }
+
+    public void limpiar() {
+        ventanaCreador.limpiar("", "");
     }
 
     public void crearEntrenador() {//aqui empezó crearEntrenador
@@ -49,24 +56,28 @@ public class ControladorVentanaCreadorEntrenador implements ActionListener {
         String pokemon1 = ventanaCreador.getjC_Pokemon1();
         String pokemon2 = ventanaCreador.getjC_Pokemon2();
         String pokemon3 = ventanaCreador.getjC_Pokemon3();
-        entrenador = new Entrenador(ventanaCreador.getjT_Usuario(), ventanaCreador.getjT_Codigo(), 0, 0, pokemon1, pokemon2, pokemon3);
+        entrenador = new Entrenador(ventanaCreador.getjT_Usuario(), ventanaCreador.getjT_Codigo(), 0, 0, ventanaCreador.getjC_Pokemon1(), ventanaCreador.getjC_Pokemon3(), ventanaCreador.getjC_Pokemon3());
         System.out.println(regristroEntrenador.getTamano());
-        if (regristroEntrenador.getTamano()!=0) {
+        if (regristroEntrenador.getTamano() != 0) {
             System.out.println("lista con datos");
             if (regristroEntrenador.verificarDatos(entrenador)) {
 
                 regristroEntrenador.setObjeto(entrenador);
                 JOptionPane.showMessageDialog(null, "Creado con satisfacción.");
-                ventanaCreador.limpiar();
+                limpiar();
             }
 
         } else {
             System.out.println("lista sin datos");
             regristroEntrenador.setObjeto(entrenador);
             JOptionPane.showMessageDialog(null, "Creado con satisfacción.");
-            ventanaCreador.limpiar();
+            limpiar();
         }
 
     }//aqui termino crearEntrenador
 
+    public void eliminar() {
+        regristroEntrenador.eliminar(ventanaCreador.getjT_CodigoBuscar());
+        JOptionPane.showMessageDialog(null, "Borrado con satiscacción");
+    }
 }

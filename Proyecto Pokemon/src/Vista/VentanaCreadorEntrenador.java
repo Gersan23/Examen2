@@ -36,9 +36,9 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
     }
     
    
-    public void limpiar(){
-        jT_Usuario.setText("");
-        jT_Usuario.setText("");
+    public void limpiar(String usuario, String codigo ){
+        jT_Usuario.setText(usuario);
+        jT_Codigo.setText(codigo);
     }
     public void agregarEscuchador(ActionListener manejador){
         jB_Borrar.addActionListener(manejador);
@@ -54,9 +54,9 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
         String agregado;
         for(int i = 0; i < pokemonVect.getTamano(); i++){
             pokemon1 = pokemonVect.poke(i);
-            jC_Pokemon1.addItem(pokemon1.getNombre());
-            jC_Pokemon2.addItem(pokemon1.getNombre());
-            jC_Pokemon3.addItem(pokemon1.getNombre());
+            jC_Pokemon1.addItem((i+1)+"-"+pokemon1.getNombre());
+            jC_Pokemon2.addItem((i+1)+"-"+pokemon1.getNombre());
+            jC_Pokemon3.addItem((i+1)+"-"+pokemon1.getNombre());
         }
     }
     /**
@@ -84,6 +84,7 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
         jB_Limpiar = new javax.swing.JButton();
         jB_Borrar = new javax.swing.JButton();
         jC_Pokemon1 = new javax.swing.JComboBox<>();
+        jB_Buscar = new javax.swing.JButton();
 
         jL_Usuario.setText("Usuario:");
 
@@ -120,6 +121,8 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
         jB_Borrar.setText("Borrar");
 
         jC_Pokemon1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jB_Buscar.setText("Buscar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -161,7 +164,8 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jT_CodigoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jL_CodigoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jL_CodigoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB_Buscar))
                 .addGap(82, 82, 82))
         );
         layout.setVerticalGroup(
@@ -178,17 +182,20 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
                     .addComponent(jT_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jT_CodigoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(jB_Modificar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jB_Modificar)
+                    .addComponent(jB_Buscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jL_Pokemon1)
                     .addComponent(jL_Pokemon2)
                     .addComponent(jL_Pokemon3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jC_Pokemon2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jC_Pokemon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jC_Pokemon3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jC_Pokemon2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jC_Pokemon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jC_Pokemon3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jB_Crear)
@@ -245,6 +252,7 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jB_Borrar;
+    private javax.swing.JButton jB_Buscar;
     private javax.swing.JButton jB_Crear;
     private javax.swing.JButton jB_Limpiar;
     private javax.swing.JButton jB_Modificar;
@@ -280,6 +288,10 @@ public class VentanaCreadorEntrenador extends javax.swing.JFrame {
 
     public String getjT_Usuario() {
         return jT_Usuario.getText();
+    }
+
+    public String getjT_CodigoBuscar() {
+        return jT_CodigoBuscar.getText();
     }
 
 

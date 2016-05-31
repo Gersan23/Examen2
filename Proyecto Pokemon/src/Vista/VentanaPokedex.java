@@ -26,6 +26,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
      */
     public VentanaPokedex() {
         initComponents();
+        setTitle("Pokédex");
         jTextArea1.enable(false);
         llenarComboBox();
         control = new ControladorPokedex(this);
@@ -54,7 +55,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
         String agregado;
         for(int i = 0; i < pokemonVect.getTamano(); i++){
             pokemon1 = pokemonVect.poke(i);
-            jC_Lista.addItem(pokemon1.getNombre());
+            jC_Lista.addItem((i+1)+"-"+pokemon1.getNombre());
         }
     }
     
