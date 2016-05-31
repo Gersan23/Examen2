@@ -22,45 +22,38 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jL_Codigo" max="32767" attributes="0"/>
-                  <Component id="jL_Usuario" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jT_Usuario" max="32767" attributes="0"/>
-                  <Component id="jT_Codigo" pref="99" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jL_CodigoBuscar" pref="92" max="32767" attributes="0"/>
-                  <Component id="jT_CodigoBuscar" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jC_Pokemon1" max="32767" attributes="0"/>
-                          <Component id="jL_Pokemon1" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jL_Pokemon1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jL_Pokemon2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jL_Pokemon3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jL_Pokemon2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jC_Pokemon2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jC_Pokemon3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_Pokemon3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jC_Pokemon2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jC_Pokemon3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jB_Modificar" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jB_Modificar" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jT_Usuario" min="-2" pref="99" max="-2" attributes="0"/>
+                                      <Component id="jT_Codigo" alignment="1" min="-2" pref="99" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
+                  </Group>
+                  <Component id="jC_Pokemon1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jL_Codigo" max="32767" attributes="0"/>
+                      <Component id="jL_Usuario" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
@@ -71,7 +64,12 @@
                       <Component id="jB_Borrar" min="-2" pref="72" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jT_CodigoBuscar" min="-2" pref="92" max="-2" attributes="0"/>
+                  <Component id="jL_CodigoBuscar" min="-2" pref="92" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -90,20 +88,21 @@
                   <Component id="jT_Codigo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jT_CodigoBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace pref="45" max="32767" attributes="0"/>
+              <Component id="jB_Modificar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jL_Pokemon1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jL_Pokemon2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jL_Pokemon3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jC_Pokemon2" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jC_Pokemon1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jC_Pokemon3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jB_Modificar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jC_Pokemon2" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jB_Crear" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jB_Limpiar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -150,11 +149,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Pok&#xe9;mon 3"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="jC_Pokemon1">
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JComboBox" name="jC_Pokemon2">
       <Properties>
@@ -211,6 +205,21 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Borrar"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jC_Pokemon1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Item 1"/>
+            <StringItem index="1" value="Item 2"/>
+            <StringItem index="2" value="Item 3"/>
+            <StringItem index="3" value="Item 4"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
