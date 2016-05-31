@@ -190,7 +190,7 @@ public class VectorPokemon {
         vectorPoke[75]=poke76;
         poke77 =new Pokemon("Ponyta",0,"77",imagen.inicializarPokemon(77),"Tipo: \nAl nacer, Ponyta es muy débil y apenas puede ponerse en pie. \n Con todo, se va haciendo más fuerte al tropezarse y caerse en su intento\n por seguir a sus progenitores.");
         vectorPoke[76]=poke77;
-        poke78 =new Pokemon("Rapidash",0,"78",imagen.inicializarPokemon(78),"Tipo: \nA Rapidash se le suele ver trotando sin rumbo fijo por los campos\n y llanos. Cuando tiene que ir a algún sitio en concreto, se le aviva el fuego de las melenas y emprende\n el galope llameante llegando a los 240 km/h.");
+        poke78 =new Pokemon("Rapidash",0,"78",imagen.inicializarPokemon(78),"Tipo: \nA Rapidash se le suele ver trotando sin rumbo fijo por los campos\n y llanos. Cuando tiene que ir a algún sitio en concreto, se le aviva el fuego\n de las melenas y emprende\n el galope llameante llegando a los 240 km/h.");
         vectorPoke[77]=poke78;
         poke79 =new Pokemon("Slowpoke",0,"79",imagen.inicializarPokemon(79),"Tipo: \nSlowpoke usa la cola para atrapar a sus presas metiéndola bajo\n el agua en las riberas de los ríos. Con todo, es olvidadizo, se le puede \n pasar lo que estaba haciendo y quedarse días enteros \n holgazaneando en la orilla.");
         vectorPoke[78]=poke79;
