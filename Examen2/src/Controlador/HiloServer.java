@@ -24,7 +24,6 @@ public class HiloServer {
     //Lista de los usuarios conectados al servidor
     private ArrayList<Socket> usuarios = new ArrayList<Socket>();
     
-    //Constructor que recibe el socket que atendera el hilo y la lista de usuarios conectados
     public HiloServer(Socket soc, ArrayList users){
         socket = soc;
         usuarios = users;
@@ -33,14 +32,14 @@ public class HiloServer {
     
     public void run() {
         try {
-            //Inicializamos los canales de comunicacion y mandamos un mensaje de bienvenida
+   
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
-            out.writeUTF("<h2>Bienvenido....</h2>");
-            //Ciclo infinito para escuchar por mensajes del cliente
-            while(true){
+            out.writeUTF("<h2>Bienvenido al servicio de chats E&G....</h2>");
+            
+            while(true){//Metodo para que cuando se envien mensajes, lo rciban todos los que esten co nectados al servidor
                String recibido = in.readUTF();
-               //Cuando se recibe un mensaje se envia a todos los usuarios conectados 
+               
                 for (int i = 0; i < usuarios.size(); i++) {
                     out = new DataOutputStream(usuarios.get(i).getOutputStream());
                     out.writeUTF(recibido);
