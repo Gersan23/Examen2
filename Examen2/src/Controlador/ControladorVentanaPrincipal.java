@@ -10,6 +10,9 @@ import Vista.VentanaAddUser;
 import Vista.FrameCliente;
 import Modelo.ArrayUser;
 import Modelo.Server;
+import Vista.FramePrivado;
+import Modelo.ServerPrivado;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Erick
@@ -20,6 +23,8 @@ public class ControladorVentanaPrincipal implements ActionListener{
     private ArrayUser array;
     private FrameCliente chatDifusion;
     private Server server;
+    private FramePrivado chatPrivado;
+    private ServerPrivado serverP;
     public ControladorVentanaPrincipal(){
         array = new ArrayUser();
         ventanaA = new VentanaAddUser(array);
@@ -33,7 +38,8 @@ public class ControladorVentanaPrincipal implements ActionListener{
             System.exit(0);
         }
         if (e.getActionCommand().equalsIgnoreCase("Chat Privado")) {
-                    
+            chatPrivado = new FramePrivado();
+            chatPrivado.show();
         }
         if (e.getActionCommand().equalsIgnoreCase("Chat Grupal")) {
           
@@ -46,6 +52,14 @@ public class ControladorVentanaPrincipal implements ActionListener{
             server = new Server();
             Thread servidor = new Thread(server);
             servidor.start();
+        }
+        if(e.getActionCommand().equalsIgnoreCase("Servidor G")){
+            
+        }
+        if(e.getActionCommand().equalsIgnoreCase("Servidor P")){
+            serverP = new ServerPrivado();
+            Thread servidorP = new Thread(serverP);
+            servidorP.start();
         }
     }
 }

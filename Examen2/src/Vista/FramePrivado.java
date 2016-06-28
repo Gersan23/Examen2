@@ -3,25 +3,25 @@ package Vista;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 import javax.swing.ScrollPaneConstants;
-import Controlador.Cliente;
-import Modelo.Server;
+import Controlador.ClientePrivado;
+import Modelo.ServerPrivado;
 import Controlador.HiloServer;
 
 /**
  *
  * @author erick
  */
-public class FrameCliente extends javax.swing.JFrame {
+public class FramePrivado extends javax.swing.JFrame {
 
     /**
      * Creates new form FrameCliente
      */
     
-    Cliente cliente;
-    public FrameCliente() {
+    ClientePrivado cliente;
+    public FramePrivado() {
         initComponents();
-        setTitle("Chat Difusión");
-        cliente= new Cliente(peMsg);
+        setTitle("Chat Privado");
+        cliente= new ClientePrivado(peMsg);
         Thread hilo = new Thread(cliente);
         hilo.start();
         

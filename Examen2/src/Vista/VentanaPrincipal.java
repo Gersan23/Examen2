@@ -6,14 +6,14 @@
 package Vista;
 
 import Controlador.ControladorVentanaPrincipal;
-import Modelo.Server;
+
 /**
  *
  * @author Gersan
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
     private ControladorVentanaPrincipal cVentanaPrincipal;
-    private Server servidor;
+    
     /**
      * Creates new form VentanaPrincipal
      */
@@ -27,6 +27,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.jBGrupal.addActionListener(cVentanaPrincipal);
         this.jBDifusion.addActionListener(cVentanaPrincipal);
         this.jBSDifu.addActionListener(cVentanaPrincipal);
+        this.jBGrupal.addActionListener(cVentanaPrincipal);
+        this.jBSPriva.addActionListener(cVentanaPrincipal);
     }
 
     /**
@@ -43,6 +45,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jBGrupal = new javax.swing.JButton();
         jBDifusion = new javax.swing.JButton();
         jBSDifu = new javax.swing.JButton();
+        jBSGrupal = new javax.swing.JButton();
+        jBSPriva = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMFile = new javax.swing.JMenu();
         jMSalir = new javax.swing.JMenuItem();
@@ -60,6 +64,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jBDifusion.setText("Chat Difusión");
 
         jBSDifu.setText("Servidor D");
+
+        jBSGrupal.setText("Servidor G");
+
+        jBSPriva.setText("Servidor P");
 
         jMFile.setText("File");
 
@@ -87,9 +95,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jBPrivado)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBPrivado)
+                    .addComponent(jBSPriva))
                 .addGap(27, 27, 27)
-                .addComponent(jBGrupal)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBGrupal)
+                    .addComponent(jBSGrupal))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -109,7 +121,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jBGrupal)
                     .addComponent(jBDifusion))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jBSDifu)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBSDifu)
+                    .addComponent(jBSGrupal)
+                    .addComponent(jBSPriva))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
@@ -160,6 +175,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jBGrupal;
     private javax.swing.JButton jBPrivado;
     private javax.swing.JButton jBSDifu;
+    private javax.swing.JButton jBSGrupal;
+    private javax.swing.JButton jBSPriva;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMCrearUsuario;
     private javax.swing.JMenu jMFile;
