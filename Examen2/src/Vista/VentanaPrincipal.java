@@ -5,17 +5,26 @@
  */
 package Vista;
 
+import Controlador.ControladorVentanaPrincipal;
+
 /**
  *
  * @author Gersan
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-
+    private ControladorVentanaPrincipal cVentanaPrincipal;
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
         initComponents();
+        this.setTitle("Chats E&G");
+        this.cVentanaPrincipal= new ControladorVentanaPrincipal();
+        this.jMSalir.addActionListener(cVentanaPrincipal);
+        this.jMCrearUsuario.addActionListener(cVentanaPrincipal);
+        this.jBPrivado.addActionListener(cVentanaPrincipal);
+        this.jBGrupal.addActionListener(cVentanaPrincipal);
+        this.jBDifusion.addActionListener(cVentanaPrincipal);
     }
 
     /**
