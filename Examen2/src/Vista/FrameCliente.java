@@ -4,6 +4,8 @@ import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 import javax.swing.ScrollPaneConstants;
 import Controlador.Cliente;
+import Modelo.Server;
+import Controlador.HiloServer;
 
 /**
  *
@@ -18,12 +20,11 @@ public class FrameCliente extends javax.swing.JFrame {
     Cliente cliente;
     public FrameCliente() {
         initComponents();
-        //Instanciamos la variable cliente pasandole el panel y activamos el hilo
         cliente= new Cliente(peMsg);
         Thread hilo = new Thread(cliente);
         hilo.start();
         
-        //Hacemos que el scroll baje automaticamente con los mensajes
+        
         jScrollPane1.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {  
             public void adjustmentValueChanged(AdjustmentEvent e) {  
                 e.getAdjustable().setValue(e.getAdjustable().getMaximum());  
@@ -113,14 +114,12 @@ public class FrameCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //Sacamos el nombre y el mensaje de las cajas de texto
+
         String nombre = txNom.getText();
         if(nombre.trim().length() == 0)nombre = "Sin Nombre";
         String msg = txMsg.getText();
         if(nombre.trim().length() == 0)return;
-        //Limpiamos el cuadro de texto del mensaje
         txMsg.setText("");
-        //Utilizamos la funcion del cliente para enviar el mensaje
         cliente.enviarMsg("<strong>"+nombre+":</strong> "+msg+"<br>");
         // TODO add your handling code here:
         

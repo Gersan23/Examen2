@@ -19,7 +19,7 @@ public class Server {
 
 
     private final int puerto = 2027;
-    private final int noConexiones = 20;
+    private final int noConexiones = Integer.parseInt(JOptionPane.showInputDialog("Digite el numero de usuarios que desea que ingresen al chat"));
    
     private ArrayList<Socket> usuarios = new ArrayList<Socket>();
        

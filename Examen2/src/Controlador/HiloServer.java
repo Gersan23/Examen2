@@ -10,6 +10,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
+import Vista.FrameCliente;
 
 /**
  *
@@ -17,7 +18,7 @@ import java.util.ArrayList;
  */
 public class HiloServer {
     
-    //Declaramos las variables que utiliza el hilo para estar recibiendo y mandando mensajes
+    
     private Socket socket;
     private DataInputStream in;
     private DataOutputStream out;
@@ -35,7 +36,7 @@ public class HiloServer {
    
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
-            out.writeUTF("<h2>Bienvenido al servicio de chats E&G....</h2>");
+            out.writeUTF("Bienvenido al servicio de chats E&G....");
             
             while(true){//Metodo para que cuando se envien mensajes, lo rciban todos los que esten co nectados al servidor
                String recibido = in.readUTF();
