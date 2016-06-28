@@ -7,7 +7,7 @@ import Controlador.Cliente;
 
 /**
  *
- * @author netosolis
+ * @author erick
  */
 public class FrameCliente extends javax.swing.JFrame {
 
