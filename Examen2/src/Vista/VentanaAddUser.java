@@ -5,8 +5,10 @@
  */
 package Vista;
 
+import Controlador.ControladorVentanaAddUser;
 import javax.swing.JTextField;
 import Modelo.ArrayUser;
+import java.awt.event.ActionListener;
 /**
  *
  * @author Gersan
@@ -25,8 +27,12 @@ public class VentanaAddUser extends javax.swing.JFrame {
         initComponents();
         setTitle("Agregar usuario");
         this.array = array;
+        ControladorVentanaAddUser control=new ControladorVentanaAddUser(this, array);
+        agregarEscuchador(control);
     }
-
+    public void agregarEscuchador(ActionListener manejador){
+        jBAgregar.addActionListener(manejador);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

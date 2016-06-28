@@ -7,7 +7,9 @@ package Controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.VentanaAddUser;
+import Vista.FrameCliente;
 import Modelo.ArrayUser;
+import Modelo.Server;
 /**
  *
  * @author Erick
@@ -16,6 +18,8 @@ public class ControladorVentanaPrincipal implements ActionListener{
     
     private VentanaAddUser ventanaA;
     private ArrayUser array;
+    private FrameCliente chatDifusion;
+    private Server server;
     public ControladorVentanaPrincipal(){
         array = new ArrayUser();
         ventanaA = new VentanaAddUser(array);
@@ -35,7 +39,13 @@ public class ControladorVentanaPrincipal implements ActionListener{
           
         }
         if (e.getActionCommand().equalsIgnoreCase("Chat Difusión")) {
-                      
+            chatDifusion = new FrameCliente();
+            chatDifusion.show();             
+        }
+        if(e.getActionCommand().equalsIgnoreCase("Servidor D")){
+            server = new Server();
+            Thread servidor = new Thread(server);
+            servidor.start();
         }
     }
 }

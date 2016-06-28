@@ -6,17 +6,18 @@
 package Vista;
 
 import Controlador.ControladorVentanaPrincipal;
-
+import Modelo.Server;
 /**
  *
  * @author Gersan
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
     private ControladorVentanaPrincipal cVentanaPrincipal;
+    private Server servidor;
     /**
      * Creates new form VentanaPrincipal
      */
-    public VentanaPrincipal() {
+    public VentanaPrincipal() {  
         initComponents();
         this.setTitle("Chats E&G");
         this.cVentanaPrincipal= new ControladorVentanaPrincipal();
@@ -25,6 +26,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.jBPrivado.addActionListener(cVentanaPrincipal);
         this.jBGrupal.addActionListener(cVentanaPrincipal);
         this.jBDifusion.addActionListener(cVentanaPrincipal);
+        this.jBSDifu.addActionListener(cVentanaPrincipal);
     }
 
     /**
@@ -40,6 +42,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jBPrivado = new javax.swing.JButton();
         jBGrupal = new javax.swing.JButton();
         jBDifusion = new javax.swing.JButton();
+        jBSDifu = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMFile = new javax.swing.JMenu();
         jMSalir = new javax.swing.JMenuItem();
@@ -55,6 +58,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jBGrupal.setText("Chat Grupal");
 
         jBDifusion.setText("Chat Difusión");
+
+        jBSDifu.setText("Servidor D");
 
         jMFile.setText("File");
 
@@ -80,13 +85,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(175, 175, 175)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jBPrivado)
                 .addGap(27, 27, 27)
                 .addComponent(jBGrupal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jBDifusion)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jBSDifu))
+                    .addComponent(jBDifusion))
                 .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
@@ -99,7 +108,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jBPrivado)
                     .addComponent(jBGrupal)
                     .addComponent(jBDifusion))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jBSDifu)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
@@ -131,11 +142,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
+                
                 new VentanaPrincipal().setVisible(true);
+                //Server servidor =new Server();
+                //servidor.escuchar();
             }
         });
     }
@@ -144,6 +159,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jBDifusion;
     private javax.swing.JButton jBGrupal;
     private javax.swing.JButton jBPrivado;
+    private javax.swing.JButton jBSDifu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMCrearUsuario;
     private javax.swing.JMenu jMFile;

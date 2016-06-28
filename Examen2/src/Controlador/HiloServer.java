@@ -11,12 +11,13 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
 import Vista.FrameCliente;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Erick
  */
-public class HiloServer {
+public class HiloServer implements Runnable{
     
     
     private Socket socket;
@@ -33,7 +34,7 @@ public class HiloServer {
     
     public void run() {
         try {
-   
+            
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
             out.writeUTF("Bienvenido al servicio de chats E&G....");

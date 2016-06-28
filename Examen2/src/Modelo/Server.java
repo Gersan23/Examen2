@@ -15,11 +15,11 @@ import javax.swing.JOptionPane;
  *
  * @author Erick
  */
-public class Server {
+public class Server implements Runnable {
 
 
     private final int puerto = 2027;
-    private final int noConexiones = Integer.parseInt(JOptionPane.showInputDialog("Digite el numero de usuarios que desea que ingresen al chat"));
+    private final int noConexiones = 20;
    
     private ArrayList<Socket> usuarios = new ArrayList<Socket>();
        
@@ -31,7 +31,7 @@ public class Server {
                 System.out.println("Escuchando....");
                 Socket cliente = servidor.accept();
                 usuarios.add(cliente);
-                Runnable  run = (Runnable) new HiloServer(cliente,usuarios);
+                Runnable  run =  new HiloServer(cliente,usuarios);
                 Thread hilo = new Thread(run);
                 hilo.start();
             }
@@ -41,9 +41,11 @@ public class Server {
         
     }
     
-    public static void main(String[] args) {
-        Server servidor= new Server();
-        servidor.escuchar();
+    
+
+    @Override
+    public void run() {
+        this.escuchar();
     }
 }
 
