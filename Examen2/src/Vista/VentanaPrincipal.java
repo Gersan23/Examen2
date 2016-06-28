@@ -27,22 +27,39 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jBPrivado = new javax.swing.JButton();
+        jBGrupal = new javax.swing.JButton();
+        jBDifusion = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jMFile = new javax.swing.JMenu();
+        jMSalir = new javax.swing.JMenuItem();
+        jMUser = new javax.swing.JMenu();
+        jMCrearUsuario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("File");
+        jLabel1.setText("CHATS");
 
-        jMenuItem1.setText("jMenuItem1");
-        jMenu1.add(jMenuItem1);
+        jBPrivado.setText("Chat Privado");
 
-        jMenuBar1.add(jMenu1);
+        jBGrupal.setText("Chat Grupal");
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jBDifusion.setText("Chat Difusión");
+
+        jMFile.setText("File");
+
+        jMSalir.setText("Salir");
+        jMFile.add(jMSalir);
+
+        jMenuBar1.add(jMFile);
+
+        jMUser.setText("User");
+
+        jMCrearUsuario.setText("Crear Usuario");
+        jMUser.add(jMCrearUsuario);
+
+        jMenuBar1.add(jMUser);
 
         setJMenuBar(jMenuBar1);
 
@@ -50,11 +67,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(175, 175, 175)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jBPrivado)
+                .addGap(27, 27, 27)
+                .addComponent(jBGrupal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(jBDifusion)
+                .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBPrivado)
+                    .addComponent(jBGrupal)
+                    .addComponent(jBDifusion))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
@@ -96,9 +132,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JButton jBDifusion;
+    private javax.swing.JButton jBGrupal;
+    private javax.swing.JButton jBPrivado;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMCrearUsuario;
+    private javax.swing.JMenu jMFile;
+    private javax.swing.JMenuItem jMSalir;
+    private javax.swing.JMenu jMUser;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
