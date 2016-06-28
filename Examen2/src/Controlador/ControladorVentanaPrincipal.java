@@ -6,16 +6,19 @@
 package Controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import Vista.VentanaAddUser;
+import Modelo.ArrayUser;
 /**
  *
  * @author Erick
  */
 public class ControladorVentanaPrincipal implements ActionListener{
     
-    
-
+    private VentanaAddUser ventanaA;
+    private ArrayUser array;
     public ControladorVentanaPrincipal(){
-    
+        array = new ArrayUser();
+        ventanaA = new VentanaA(array);
     }
     
     public void actionPerformed(ActionEvent e) {
