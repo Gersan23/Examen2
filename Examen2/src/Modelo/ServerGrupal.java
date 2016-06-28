@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public class ServerGrupal implements Runnable {
 
 
-    private final int puerto = 2028;
+    private final int puerto = 2029;
     private final int noConexiones =  Integer.parseInt(JOptionPane.showInputDialog("Digite el tamaño del grupo"));
    
     private ArrayList<Socket> usuarios = new ArrayList<Socket>();
