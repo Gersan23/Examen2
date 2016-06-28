@@ -6,8 +6,10 @@
 package Controlador;
 import Vista.VentanaAddUser;
 import Modelo.ArrayUser;
+import Modelo.User;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Gersan
@@ -30,6 +32,16 @@ public class ControladorVentanaAddUser implements ActionListener {
     }
     
     public void agregar(){
-        
+        User objeto = null;        
+        String user = ventanaA.getjTUser();
+        objeto = new User(user, false, false);
+        if(array.getTamano() != 0){
+            array.setObjeto(objeto);
+            JOptionPane.showMessageDialog(null, "Agregado con satisfacción.");
+        }
+        else{
+            array.setObjeto(objeto);
+            JOptionPane.showMessageDialog(null, "Agregado con satisfacción.");
+        }
     }
 }

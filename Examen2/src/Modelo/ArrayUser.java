@@ -65,4 +65,13 @@ public class ArrayUser {
         return array.size();
     }
 
+    public boolean verificarDatos(User e){
+      for (int i = 0; i < array.size(); i++) {
+          if(e.getNombre().equalsIgnoreCase(array.get(i).getNombre())){
+              JOptionPane.showMessageDialog(null, "El nombre de usuario ya existe.");
+              return false;
+          }
+      }
+      return true;
+    }
 }

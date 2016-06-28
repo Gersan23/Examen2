@@ -18,13 +18,12 @@ public class ControladorVentanaPrincipal implements ActionListener{
     private ArrayUser array;
     public ControladorVentanaPrincipal(){
         array = new ArrayUser();
-        ventanaA = new VentanaA(array);
+        ventanaA = new VentanaAddUser(array);
     }
     
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand().equalsIgnoreCase("Crear Usuario")) {
-            
-           
+        if (e.getActionCommand().equalsIgnoreCase("Crear Usuario")) {            
+           ventanaA.show();
         }
         if (e.getActionCommand().equalsIgnoreCase("Salir")) {
             System.exit(0);
