@@ -61,9 +61,15 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="jBPrivado" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jBPrivado" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBSPriva" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Component id="jBGrupal" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jBGrupal" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBSGrupal" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="26" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -88,7 +94,11 @@
                   <Component id="jBDifusion" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jBSDifu" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jBSDifu" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBSGrupal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBSPriva" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="45" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -118,6 +128,16 @@
     <Component class="javax.swing.JButton" name="jBSDifu">
       <Properties>
         <Property name="text" type="java.lang.String" value="Servidor D"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBSGrupal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Servidor G"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBSPriva">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Servidor P"/>
       </Properties>
     </Component>
   </SubComponents>
