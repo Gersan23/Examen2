@@ -50,8 +50,7 @@ public class FrameCliente extends javax.swing.JFrame {
         txMsg = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+        
         peMsg.setContentType("text/html"); // NOI18N
         jScrollPane1.setViewportView(peMsg);
         peMsg.getAccessibleContext().setAccessibleDescription("text/plain");

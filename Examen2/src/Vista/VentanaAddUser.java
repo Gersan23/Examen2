@@ -46,8 +46,6 @@ public class VentanaAddUser extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jTUser = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jBAgregar.setText("Agregar");
 
         jLabel1.setText("User");

@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.ControladorVentanaPrincipal;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,7 +28,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.jBGrupal.addActionListener(cVentanaPrincipal);
         this.jBDifusion.addActionListener(cVentanaPrincipal);
         this.jBSDifu.addActionListener(cVentanaPrincipal);
-        this.jBGrupal.addActionListener(cVentanaPrincipal);
+        this.jBSGrupal.addActionListener(cVentanaPrincipal);
         this.jBSPriva.addActionListener(cVentanaPrincipal);
     }
 
@@ -162,7 +163,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
-                
+                JOptionPane.showMessageDialog(null,"Instrucciones: cada frame tiene su \nservidor para tener puertos diferentes y no salgan \nen el mismo frame lo que se escribe.\n El chat privado permite 2 conecciones\nEl chat en grupos usted decide el numero\nEl difusión tiene un limite pero es muy grande");
                 new VentanaPrincipal().setVisible(true);
                 //Server servidor =new Server();
                 //servidor.escuchar();
