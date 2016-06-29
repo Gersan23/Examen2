@@ -5,11 +5,16 @@
  */
 package Vista;
 
+import Modelo.Entrenador;
+import Modelo.RegistroEntrenador;
+
 /**
  *
  * @author Gersan
  */
 public class VentanaRanking extends javax.swing.JFrame {
+
+    RegistroEntrenador array = new RegistroEntrenador();
 
     /**
      * Creates new form VentanaRanking
@@ -17,6 +22,17 @@ public class VentanaRanking extends javax.swing.JFrame {
     public VentanaRanking() {
         initComponents();
         this.setTitle("Ranking Entrenador");
+        llenarComboBox();
+    }
+
+    public void llenarComboBox() {//llenar la lista de combobox
+        jC_Entrenadores.removeAllItems();
+        Entrenador entrenador = null;
+        for(int i = 0; i < array.getTamano(); i++) {
+                entrenador = array.getObjeto(i);                
+                jC_Entrenadores.addItem(entrenador.getUsuario());
+            }
+        
     }
 
     /**

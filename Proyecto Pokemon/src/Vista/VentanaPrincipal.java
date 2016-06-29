@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 package Vista;
+import Modelo.ServerPrivado;
 import Controlador.ControladorVentanaPrincipal;
  
 
 public class VentanaPrincipal extends javax.swing.JFrame {
     private ControladorVentanaPrincipal cVentanaPrincipal;
+    private ServerPrivado serverP;
     /**
      * Creates new form NewJFrame
      */
@@ -20,6 +22,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.jM_Ranking.addActionListener(cVentanaPrincipal);
         this.jM_Ver.addActionListener(cVentanaPrincipal);
         this.jB_Batalla.addActionListener(cVentanaPrincipal);
+        this.jBChat.addActionListener(cVentanaPrincipal);
+        serverP = new ServerPrivado();
+        Thread servidorP = new Thread(serverP);
+        servidorP.start();
     }
 
     /**
@@ -34,6 +40,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jR_1Jugador = new javax.swing.JRadioButton();
         jR_2Jugadores = new javax.swing.JRadioButton();
         jB_Batalla = new javax.swing.JButton();
+        jBChat = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jM_Archivo = new javax.swing.JMenu();
         jM_Entrenador = new javax.swing.JMenu();
@@ -49,6 +56,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jR_2Jugadores.setText("2 Jugadores");
 
         jB_Batalla.setText("Batalla");
+
+        jBChat.setText("Chat");
 
         jM_Archivo.setText("Archivo");
         jMenuBar1.add(jM_Archivo);
@@ -89,6 +98,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(99, 99, 99)
                 .addComponent(jB_Batalla, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(242, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jBChat, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,7 +112,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addComponent(jR_1Jugador)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jR_2Jugadores)))
-                .addGap(114, 114, 114))
+                .addGap(91, 91, 91)
+                .addComponent(jBChat))
         );
 
         pack();
@@ -142,11 +155,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VentanaPrincipal().setVisible(true);
+                
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBChat;
     private javax.swing.JButton jB_Batalla;
     private javax.swing.JMenu jM_Archivo;
     private javax.swing.JMenuItem jM_Crear_Entrenador;

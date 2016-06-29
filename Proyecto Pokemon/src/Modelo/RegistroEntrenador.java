@@ -20,8 +20,11 @@ public class RegistroEntrenador {
   public RegistroEntrenador()
   {
     array=new ArrayList<Entrenador>();
+    Entrenador computadora = new Entrenador("CPU", "0000", 0, 0, "Venusaur", "Blastoise", "Charizard");
+    setObjeto(computadora);
   }
   
+        
   public void setObjeto(Entrenador objeto)
   {
     array.add(objeto);
@@ -53,7 +56,8 @@ public class RegistroEntrenador {
     return objeto;
   }
   public Entrenador getObjeto(int i)
-  { return array.get(i);
+  { 
+      return array.get(i);
   }
   
   public void eliminar(String codigo)
@@ -93,8 +97,8 @@ public class RegistroEntrenador {
         return array;
     }
   
-  
-  
+    
+
     
     
 }

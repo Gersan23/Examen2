@@ -41,8 +41,8 @@ public class ControladorVentanaCreadorEntrenador implements ActionListener {
         if (e.getActionCommand().equalsIgnoreCase("Modificar")) {
 
         }
-        if(e.getActionCommand().equalsIgnoreCase("Buscar")){
-            
+        if (e.getActionCommand().equalsIgnoreCase("Buscar")) {
+
         }
 
     }
@@ -51,6 +51,7 @@ public class ControladorVentanaCreadorEntrenador implements ActionListener {
         ventanaCreador.limpiar("", "");
     }
 
+        
     public void crearEntrenador() {//aqui empezó crearEntrenador
         Entrenador aux;
         String pokemon1 = ventanaCreador.getjC_Pokemon1();
