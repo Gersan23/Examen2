@@ -52,6 +52,7 @@ public class ControladorVentanaPrincipal implements ActionListener{
         if(e.getActionCommand().equalsIgnoreCase("Chat")){
             ventanaChat = new FramePrivado();
             ventanaChat.show();
-        }        
+        }    
+        
     }
 }
